@@ -38,7 +38,7 @@ window.addEventListener("load", (event) => {
    * 4.quando stampo in pagina i 5 numeri casuali parte un timer
    * 5.scaduto il tempo i miei 5 numeri scompaiono
    * 6-allo scadere del tempo compaiono 5 input
-   * 7- devo chiedere all'utente di inserire i numeri che ha bisto prima se si li ricorda
+   * 7- devo chiedere all'utente di inserire i numeri che ha visto prima se si li ricorda
    * 8-inserisco in un array i numeri dati dall'utente
    * 9-confornto il mio array di numeri generati con quelli inseriti da utente
    * 10-stampo il risultato dei numeri indovinati e quali sono
@@ -49,11 +49,10 @@ const numbersPlayed = document.getElementById('numbers');
 const display = document.getElementById('display');
 const numberMessage = document.getElementById('numbermessage');
 const inputField = document.getElementById('inputnumbers');
-
-//   preparo la lista dei numeri casuali e i secomndi del timer
+const button = document.querySelector('button');
+//   preparo la lista dei numeri casuali e i secondi del timer
 let randomNumbers= [];
 let seconds = 5; 
-let input;
 // sono 30 ricordati di cambiarli
 
 //   quanti numeri devo pescare
@@ -81,6 +80,7 @@ const timer = setInterval(() =>{
         clearInterval(timer);
         // al termine timer nascondo i numeri generati
         numbersPlayed.classList.add('hide');
+
         numberMessage.innerText = 'Inserisci i numeri che hai appena visto:';
         // genero gli input
         for( let i= 0; i< howManyNumbers ;i++){
@@ -88,5 +88,6 @@ const timer = setInterval(() =>{
             const input = generateInput(howManyNumbers);
             inputField.appendChild(input);
         }
+        button.classList.remove('hide');
     } 
 },1000);
