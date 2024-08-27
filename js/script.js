@@ -4,8 +4,7 @@ Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente de
 i numeri
 che ha visto precedentemente, nell'ordine che preferisce.
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da
-indovinare sono
-stati individuati.
+indovinare sono stati individuati.
 NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini
 il più possibile.
 
@@ -52,7 +51,10 @@ const inputField = document.getElementById('inputnumbers');
 const button = document.querySelector('button');
 //   preparo la lista dei numeri casuali e i secondi del timer
 let randomNumbers= [];
+// dove andranno i numeri inseriti da utente
+let userNumbers = [];
 let seconds = 5; 
+
 // sono 30 ricordati di cambiarli
 
 //   quanti numeri devo pescare
@@ -89,16 +91,14 @@ const timer = setInterval(() =>{
             inputField.appendChild(input);
         }
         button.classList.remove('hide');
-        
     } 
 },1000);
  // se clicco sul bottone mi devo prendere i valori inseriti da utente
 
 button.addEventListener('click', function(){
     const userInputs = inputField.querySelectorAll('input');
-    let userNumbers = [];
     for(let i = 0; i < userInputs.length ; i++){
         userNumbers.push(userInputs[i].value);
     }
-    console.log(userInputs, 'userinputs', userNumbers, 'usernumbers');
+    console.log('usernumbers: ',userNumbers.join(' '));
 })

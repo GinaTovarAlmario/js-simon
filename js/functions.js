@@ -15,3 +15,14 @@ function generateInput(howManyNumbers){
     input.placeholder = "Inserisci il numero";
     return input;
 }
+// funzione per cercare in un array
+function isInArray (needle, haystack){
+    let isFound = false;
+    for(let i = 0; i < haystack.length; i++){
+        const element = haystack[i];
+        if(element === needle){
+            isFound = true;
+        }
+    }
+    return isFound;
+}
