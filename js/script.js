@@ -25,3 +25,18 @@ console.log('Js ok');
 window.addEventListener("load", (event) => {
     console.log("page is fully loaded");
   });
+
+  /** SCALETTA PROVVISORIA
+   * 1.mi servirà una funzione per generare 5 numeri casuali
+   * 2.mi servirà una variabile per salvare i numeri casuali estratti, probabilmente un
+   * array che andrò a riempire
+   * 3.mi servirà una funzione per il timer di 30 secondi, che dovrò gestire
+   * 4.quando stampo in pagina i 5 numeri casuali parte un timer
+   * 5.scaduto il tempo i miei 5 numeri scompaiono
+   * 6-allo scadere del tempo compaiono 5 input
+   * 7- devo chiedere all'utente di inserire i numeri che ha bisto prima se si li ricorda
+   * 8-inserisco in un array i numeri dati dall'utente
+   * 9-confornto il mio array di numeri generati con quelli inseriti da utente
+   * 10-stampo il risultato dei numeri indovinati e quali sono
+   * 
+   */
