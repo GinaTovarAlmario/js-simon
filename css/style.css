@@ -1,0 +1,23 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: powderblue;
+}
+/* generics */
+.conatainer{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+#play{
+    text-align: center;
+    font-size: x-large;
+}

@@ -40,6 +40,8 @@ window.addEventListener("load", (event) => {
    * 10-stampo il risultato dei numeri indovinati e quali sono
    * 
    */
+//   prendo gli elementi dal DOM
+const numbersPlayed = document.getElementById('numbers');
 //   preparo la lista dei numeri casuali
   let randomNumbers= [];
 //   quanti numeri devo pescare
@@ -50,3 +52,5 @@ window.addEventListener("load", (event) => {
   randomNumbers = getRandomNumber(100,5);
 //   stampo in console per vedere i miei numeri pescati
   console.log(randomNumbers);
+//   stampo in pagina i numeri pescati
+  numbersPlayed.innerText = randomNumbers;
