@@ -17,15 +17,28 @@ body{
     margin-top: 30px;
     margin-bottom: 50px;
 }
-#playednumbers{
+#numbermessage{
     text-align: center;
     font-size: x-large;
+}
+#numbers{
+    margin-top: 20px;
+    text-align: center;
+    font-size: xx-large;
 }
 #display{
     text-align: center;
     font-size: 100px;
-    color: red;
+    color: black;
 }
 .hide{
     display: none;
+}
+#inputnumbers{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
 }

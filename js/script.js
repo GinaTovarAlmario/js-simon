@@ -69,8 +69,8 @@ randomNumbers = getRandomNumber(maxNumbers,howManyNumbers);
 console.log(randomNumbers);
 
 //   stampo in pagina i numeri pescati
-numbersPlayed.innerText = randomNumbers;
-numberMessage.innerText = 'Memorizza i seguenti Numeri: ';
+numbersPlayed.innerText = randomNumbers.join(' ');
+numberMessage.innerText = 'Memorizza i seguenti numeri entro il tempo limite!';
 //   stampo i secondi del timer
  display.innerText = seconds;
 // ora dovrei contare all'indietro
