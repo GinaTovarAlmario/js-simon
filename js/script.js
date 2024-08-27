@@ -40,3 +40,13 @@ window.addEventListener("load", (event) => {
    * 10-stampo il risultato dei numeri indovinati e quali sono
    * 
    */
+//   preparo la lista dei numeri casuali
+  let randomNumbers= [];
+//   quanti numeri devo pescare
+  const howManyNumbers = 5;
+//   range max di numeri da cui pescare
+  const maxNumbers = 100;
+//   invoco la funzione per generare 5 numeri casuali da 1 a 100
+  randomNumbers = getRandomNumber(100,5);
+//   stampo in console per vedere i miei numeri pescati
+  console.log(randomNumbers);
