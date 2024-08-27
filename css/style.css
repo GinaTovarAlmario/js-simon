@@ -17,7 +17,7 @@ body{
     margin-top: 30px;
     margin-bottom: 50px;
 }
-#play{
+#playednumbers{
     text-align: center;
     font-size: x-large;
 }
@@ -25,4 +25,7 @@ body{
     text-align: center;
     font-size: 100px;
     color: red;
+}
+.hide{
+    display: none;
 }

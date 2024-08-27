@@ -1,13 +1,17 @@
 /*Descrizione:
 Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
-Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire i numeri
+Dopo 30 secondi i numeri scompaiono e appaiono invece 5 input in cui l'utente deve inserire
+i numeri
 che ha visto precedentemente, nell'ordine che preferisce.
-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono
+Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da
+indovinare sono
 stati individuati.
-NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini il più possibile.
+NOTA: non è importante l'ordine con cui l'utente inserisce i numeri, basta che ne indovini
+il più possibile.
 
 BONUS 1:
-Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da numeri lo blocchiamo
+Inseriamo la validazione: se l'utente mette due numeri uguali o inserisce cose diverse da
+numeri lo blocchiamo
 in qualche modo.
 
 BONUS 2:
@@ -43,10 +47,14 @@ window.addEventListener("load", (event) => {
 //   prendo gli elementi dal DOM
 const numbersPlayed = document.getElementById('numbers');
 const display = document.getElementById('display');
+const numberMessage = document.getElementById('numbermessage');
+const inputField = document.getElementById('inputnumbers');
 
 //   preparo la lista dei numeri casuali e i secomndi del timer
 let randomNumbers= [];
-let seconds = 30;
+let seconds = 5; 
+let input;
+// sono 30 ricordati di cambiarli
 
 //   quanti numeri devo pescare
 const howManyNumbers = 5;
@@ -55,18 +63,30 @@ const howManyNumbers = 5;
 const maxNumbers = 100;
 
 //   invoco la funzione per generare 5 numeri casuali da 1 a 100
-randomNumbers = getRandomNumber(100,5);
+randomNumbers = getRandomNumber(maxNumbers,howManyNumbers);
 
 //   stampo in console per vedere i miei numeri pescati
 console.log(randomNumbers);
 
 //   stampo in pagina i numeri pescati
 numbersPlayed.innerText = randomNumbers;
+numberMessage.innerText = 'Memorizza i seguenti Numeri: ';
 //   stampo i secondi del timer
  display.innerText = seconds;
 // ora dovrei contare all'indietro
 const timer = setInterval(() =>{
     display.innerText = --seconds;
-    if(seconds === 0) clearInterval(timer);
-},1000);
 // ora però devo dirgli di fermarsi a zero
+    if(seconds === 0){
+        clearInterval(timer);
+        // al termine timer nascondo i numeri generati
+        numbersPlayed.classList.add('hide');
+        numberMessage.innerText = 'Inserisci i numeri che hai appena visto:';
+        // genero gli input
+        for( let i= 0; i< howManyNumbers ;i++){
+            // creo un input
+            const input = generateInput(howManyNumbers);
+            inputField.appendChild(input);
+        }
+    } 
+},1000);

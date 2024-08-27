@@ -7,3 +7,11 @@ function getRandomNumber(max,howManyNumbers){
     }
     return randomNumbers;
 }
+// funzione per generare input
+function generateInput(howManyNumbers){
+    let input = document.createElement('input');
+    input.type = "number";
+    input.value = "";
+    input.placeholder = "Inserisci il numero";
+    return input;
+}
