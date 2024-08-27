@@ -89,5 +89,16 @@ const timer = setInterval(() =>{
             inputField.appendChild(input);
         }
         button.classList.remove('hide');
+        
     } 
 },1000);
+ // se clicco sul bottone mi devo prendere i valori inseriti da utente
+
+button.addEventListener('click', function(){
+    const userInputs = inputField.querySelectorAll('input');
+    let userNumbers = [];
+    for(let i = 0; i < userInputs.length ; i++){
+        userNumbers.push(userInputs[i].value);
+    }
+    console.log(userInputs, 'userinputs', userNumbers, 'usernumbers');
+})
