@@ -42,15 +42,31 @@ window.addEventListener("load", (event) => {
    */
 //   prendo gli elementi dal DOM
 const numbersPlayed = document.getElementById('numbers');
-//   preparo la lista dei numeri casuali
-  let randomNumbers= [];
+const display = document.getElementById('display');
+
+//   preparo la lista dei numeri casuali e i secomndi del timer
+let randomNumbers= [];
+let seconds = 30;
+
 //   quanti numeri devo pescare
-  const howManyNumbers = 5;
+const howManyNumbers = 5;
+
 //   range max di numeri da cui pescare
-  const maxNumbers = 100;
+const maxNumbers = 100;
+
 //   invoco la funzione per generare 5 numeri casuali da 1 a 100
-  randomNumbers = getRandomNumber(100,5);
+randomNumbers = getRandomNumber(100,5);
+
 //   stampo in console per vedere i miei numeri pescati
-  console.log(randomNumbers);
+console.log(randomNumbers);
+
 //   stampo in pagina i numeri pescati
-  numbersPlayed.innerText = randomNumbers;
+numbersPlayed.innerText = randomNumbers;
+//   stampo i secondi del timer
+ display.innerText = seconds;
+// ora dovrei contare all'indietro
+const timer = setInterval(() =>{
+    display.innerText = --seconds;
+    if(seconds === 0) clearInterval(timer);
+},1000);
+// ora però devo dirgli di fermarsi a zero

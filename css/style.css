@@ -21,3 +21,8 @@ body{
     text-align: center;
     font-size: x-large;
 }
+#display{
+    text-align: center;
+    font-size: 100px;
+    color: red;
+}
